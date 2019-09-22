@@ -1,0 +1,24 @@
+{
+  "name": "untitled9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node spider.js",
+    "test": "node read.js",
+    "run2": "node readValue.js",
+    "superspider": "coffee SuperSpider.coffee"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "generic-pool": "^3.7.1",
+    "iconv-lite": "^0.5.0",
+    "puppeteer": "^1.20.0",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "sqlite3": "^4.1.0"
+  }
+}

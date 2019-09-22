@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "read.js",
+  "sourceRoot": "",
+  "sources": [
+    "read.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA,MAAA,EAAA;;EAAA,KAAA,GAAQ,OAAA,CAAQ,OAAR;;EACR,MAAA,GAAS,KAAK,CAAC,YAAN,CAAmB,MAAnB,EAA2B,WAA3B;;EAET,MAAM,CAAC,EAAP,CAAU,OAAV,EAAmB,QAAA,CAAC,GAAD,CAAA;WACf,OAAO,CAAC,GAAR,CAAY,GAAZ;EADe,CAAnB;;EAGA,MAAM,CAAC,GAAP,CAAW,QAAX,EAAqB,QAAA,CAAC,GAAD,EAAM,IAAN,CAAA;IACjB,OAAO,CAAC,GAAR,CAAY,IAAZ;WACA,MAAM,CAAC,IAAP,CAAA;EAFiB,CAArB;;EAIA,MAAM,CAAC,GAAP,CAAW,QAAX,EAAqB,QAAA,CAAC,GAAD,EAAM,IAAN,CAAA;IACjB,OAAO,CAAC,GAAR,CAAY,IAAZ;WACA,MAAM,CAAC,IAAP,CAAA;EAFiB,CAArB;AAVA",
+  "sourcesContent": [
+    "redis = require 'redis'\nclient = redis.createClient '6379', '127.0.0.1'\n\nclient.on 'error', (err)->\n    console.log err\n\nclient.get '001237', (err, data)->\n    console.log data\n    client.quit()\n\nclient.get '000001', (err, data)->\n    console.log data\n    client.quit()"
+  ]
+}
