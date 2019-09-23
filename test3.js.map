@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "test3.js",
+  "sourceRoot": "",
+  "sources": [
+    "test3.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA,OAAA,EAAA;;EAAA,SAAA,GAAY,OAAA,CAAQ,WAAR;;EACZ,OAAA,GAAU,SAAS,CAAC,MAAV,CAAA;AADV",
+  "sourcesContent": [
+    "puppeteer = require 'puppeteer'\nbrowser = puppeteer.launch()\n"
+  ]
+}
