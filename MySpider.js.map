@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "MySpider.js",
+  "sourceRoot": "",
+  "sources": [
+    "MySpider.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA,OAAA,EAAA,iBAAA,EAAA,IAAA,EAAA;;EAAA,OAAA,GAAU,OAAA,CAAQ,SAAR;;EACV,iBAAA,GAAoB,OAAA,CAAQ,qBAAR;;EACpB,IAAA,GAAO,iBAAA,CAAkB;IACrB,aAAA,EAAc;MACV,iBAAA,EAAkB,IADR;MAEV,QAAA,EAAS,IAFC;MAGV,OAAA,EAAQ,CAHE;MAIV,IAAA,EAAK;IAJK;EADO,CAAlB;;EAQP,MAAA,GAAS,MAAA,QAAA,CAAC,GAAD,EAAM,QAAN,CAAA;WACL,CAAA,MAAM,IAAI,CAAC,GAAL,CAAS,MAAA,QAAA,CAAC,QAAD,CAAA;AACX,UAAA,IAAA,EAAA;MAAA,IAAA,GAAO,CAAA,MAAM,QAAQ,CAAC,OAAT,CAAA,CAAN;MACP,MAAM,IAAI,CAAC,IAAL,CAAU,GAAV;MACN,IAAA,GAAO,CAAA,MAAM,IAAI,CAAC,OAAL,CAAA,CAAN;MACP,MAAM,IAAI,CAAC,KAAL,CAAA;aACN,QAAA,CAAS,IAAT;IALW,CAAT,CAAN;EADK;;EAQT,MAAM,CAAC,OAAP,GAAiB;AAlBjB",
+  "sourcesContent": [
+    "cheerio = require 'cheerio'\ninitPuppeteerPool = require './puppeteer-pool.js'\npool = initPuppeteerPool {\n    puppeteerArgs:{\n        ignoreHTTPSErrors:true,\n        headless:true,\n        timeout:0,\n        pipe:true\n    }\n}\nspyfun = (url, callback)->\n    await pool.use (instance)->\n        page = await instance.newPage()\n        await page.goto url\n        html = await page.content()\n        await page.close()\n        callback(html)\n\nmodule.exports = spyfun"
+  ]
+}
