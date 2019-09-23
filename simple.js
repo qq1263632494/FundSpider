@@ -1,10 +1,9 @@
 //成功的等待循环体结束后的关闭资源
-const $ = require('cheerio');
 const puppeteer = require('puppeteer');
 const url = 'https://juejin.im/books';
 //打开一个浏览器
 let browser;
-async function run(params) {
+async function run() {
     // 打开一个页面
     for(let i=0; i<3; i++){
         const page = await browser.newPage();
@@ -19,4 +18,4 @@ async function f() {
     await run();
     browser.close();
 }
-f();
+f().then(r => console.log(r));
