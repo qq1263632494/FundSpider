@@ -1,3 +1,4 @@
+//成功的等待循环体结束后的关闭资源
 const $ = require('cheerio');
 const puppeteer = require('puppeteer');
 const url = 'https://juejin.im/books';
